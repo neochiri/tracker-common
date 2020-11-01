@@ -1,4 +1,6 @@
-import com.tlc.tracker.security.TrackerSecurity;
+package com.tlc.tracker.security;
+
+import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +9,6 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@TrackerSecurity
-public @interface TrackerCommon {
+@Import({ SecurityConfiguration.class })
+public @interface TrackerSecurity {
 }
